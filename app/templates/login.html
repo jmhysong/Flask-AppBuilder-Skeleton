@@ -7,7 +7,7 @@
   crossorigin="anonymous"></script>
  </head>
  <body>
-    <input id="url" type="text" value="Enter URL to summarize">
+    <textarea id="urls" cols="80" rows="24" value="Enter URL to summarize"></textarea>
     <input id="submitbutton" type="submit" value="Test Send Data">
     <script type="text/javascript">
 
@@ -26,7 +26,7 @@
     }
 
     $('#submitbutton').click(function(){
-        datatosend = $("#url").val();
+        datatosend = $("#urls").val();
         result = runPyScript(datatosend);
         $("#append").empty().append("result: "+result);
     });
