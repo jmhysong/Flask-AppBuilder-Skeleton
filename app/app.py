@@ -27,14 +27,15 @@ def login():
         print(datafromjs)
         # Add Summarization and Bias code here.
         news = []
-        s = 0
-        b = 0
         for url in datafromjs.strip().split("\n"):
+            s = 0
+            b = 0
             try:
                 s = round(subjectivity(url),4)
                 b = round(polarity(url),4)
             except Exception as e:
-                print('retrieval error: '+ str(e))
+                s = 'retrieval error: '+ str(e)
+                b = 'retrieval error: '+ str(e)
                 pass
             resplist = []
             resplist.append(url)
