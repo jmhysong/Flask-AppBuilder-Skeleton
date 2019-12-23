@@ -24,7 +24,6 @@ def login():
    message = None
    if request.method == 'GET':
         datafromjs = request.args.get('mydata')
-        print(datafromjs)
         # Add Summarization and Bias code here.
         news = []
         for url in datafromjs.strip().split("\n"):
@@ -37,15 +36,14 @@ def login():
                 s = 'retrieval error: '+ str(e)
                 b = 'retrieval error: '+ str(e)
                 pass
-            resplist = []
-            resplist.append(url)
-            resplist.append(s)
-            resplist.append(b)
+            resplist = {}
+            resplist["url"] = url
+            resplist["subjectivity"] = s
+            resplist["polarity"] = b
             news.append(resplist)
 
         resp = make_response('{"response": '+json.dumps(news)+'}')
         resp.headers['Content-Type'] = "application/json"
-        print(resp)
         return resp
 
 
