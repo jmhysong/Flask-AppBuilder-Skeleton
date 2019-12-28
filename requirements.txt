@@ -1,0 +1,9 @@
+textblob
+bs4
+urllib
+lxml
+logging
+Flask
+flask
+flask_appbuilder
+sqlalchemy
