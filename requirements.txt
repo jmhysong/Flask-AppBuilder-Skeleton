@@ -1,3 +1,4 @@
+six
 textblob
 bs4
 urllib3
