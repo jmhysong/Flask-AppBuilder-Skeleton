@@ -1,6 +1,6 @@
 textblob
 bs4
-urllib
+urllib3
 lxml
 logging
 Flask
